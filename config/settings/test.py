@@ -10,7 +10,7 @@ from .base import env
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = False
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-SECRET_KEY = env("DJANGO_SECRET_KEY", default="LZvUtiCPEbQiLl1P3pP7m3LPlSZJl2Pl9IEsX4sgJTy40vZsF7bPZOhFh54fdHef")
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="NjyNKTfYkspD9ynhMYfYetF2JnN0hk2rVmBMhd8rbGCztyW1UKhwyl1F5HziPpgZ")
 # https://docs.djangoproject.com/en/dev/ref/settings/#test-runner
 TEST_RUNNER = "django.test.runner.DiscoverRunner"
 

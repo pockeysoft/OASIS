@@ -4,22 +4,20 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from rest_framework_jwt.views import obtain_jwt_token
+from oasis import views
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path(
-        "about/",
-        TemplateView.as_view(template_name="pages/about.html"),
-        name="about",
-    ),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
-    path(
-        "users/",
-        include("oasis.users.urls", namespace="users"),
-    ),
+    path("rest-auth/", include('rest_auth.urls')),
+    path("rest-auth/registration/", include('rest_auth.registration.urls')),
+    path("users/", include("oasis.users.urls", namespace="users")),
+    path("images/", include("oasis.images.urls", namespace="images")),
+    path("notifications/", include("oasis.notifications.urls", namespace="notifications")),
     path("accounts/", include("allauth.urls")),
+    path("", views.ReactAppView.as_view(), name="home"),
     # Your stuff: custom urls includes go here
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
