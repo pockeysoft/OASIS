@@ -107,6 +107,17 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [  # noqa F405
     ),
 ]
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env('RDS_DB_NAME'),
+        'USER': env('RDS_DB_USERNAME'),
+        'PASSWORD': env('RDS_DB_PASSWORD'),
+        'HOST': env('RDS_DB_HOSTNAME'),
+        'PORT': env('RDS_DB_PORT'),
+    }
+}
+
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
