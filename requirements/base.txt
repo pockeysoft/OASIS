@@ -18,7 +18,7 @@ djangorestframework==3.8.2  # https://github.com/encode/django-rest-framework
 coreapi==2.3.3  # https://github.com/core-api/python-client
 
 # Python-PostgreSQL Database Adapter
-psycopg2==2.7.3.1
+psycopg2==2.7.4
 
 # Your custom requirements go here
 djangorestframework-jwt==1.11.0
